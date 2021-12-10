@@ -1,84 +1,15 @@
 <html>
-<script>
-var words = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-var start = 0, end = words.length-1, mid = Math.round((start + end)/2), steps = 0;
-
-function loadmore(){
-
-  mid = Math.round((start + end)/2);
-
-  if(start < end){
-    steps = steps+1
-  }
-
-  var msg = document.getElementById('msg')
-  msg.innerHTML = "Is your first letter more than '" + words[mid] + "'";
-
-  var foundmsg = document.getElementById('foundmsg')
-  foundmsg.value = "Yes, " + words[mid] + " is my letter steps taken " + steps;
-}
-
-function left(){
-  end = mid-1;
-  loadmore();
-}
-
-function right(){
-  start = mid+1;
-  loadmore();
-}
-
-function found(){
-  alert('found in ' + steps + ' steps (found within 4 steps)');
-  start = 0
-  end = words.length-1
-  mid = Math.round((start + end)/2)
-  steps = 0;
-
-  var msg = document.getElementById('msg')
-  msg.innerHTML = "Is your first letter more than '" + words[mid] + "'";
-
-  var foundmsg = document.getElementById('foundmsg')
-  foundmsg.value = "Yes, " + words[mid] + " is my letter steps taken " + steps;
-}
-
-</script>
 <body onload = ''>
 
   <center>Hello World. </center>
   <br />
   <center>
     <div style='border:1px solid black;width:500px;'>
-      <center><span style='font-size:20px;'>CV / Resume </span><a href = 'saurabhCV.pdf'> Click Here For CV </a><br /></center>
-      <center><span style='font-size:20px;'>Projects </span><a href = 'projects.html'> Click Here For Projects </a><br /></center>
-      <center><span style='font-size:20px;'>Linkedin </span><a href = 'https://www.linkedin.com/in/saurabh-saluja-a6605984/'> Click Here (Linkedin) </a><br /></center>
-      <center><span style='font-size:20px;'>My Paintings </span><a href = 'paintings.html'> Click Here (For My Paintings) My Hobby </a><br /></center>
+      <center><span style='font-size:20px;'>Projects </span><a href = 'https://drive.google.com/file/d/1arLkMyLqG4u2KOUtzC0ismJLHk_oJ96R/view?usp=sharing'> Download Solo Dance </a><br /></center>
+      <center><span style='font-size:20px;'>CV / Resume </span><a href = 'https://drive.google.com/file/d/1wcp6rdrU8bjU8IunUAfjhL21xiwtTf3t/view?usp=sharing'> Download Group Dance </a><br /></center>
     </div>
   </center>
   <br />
-  <br />
-  <br />
-
-  <center> I will guess first letter of any name into your mind within log2(26)=4.7= within 4 chances. </center>
-  <br />
-  <center> Try me! I promiss not to take any steps more than that</center>
-  <br />
-  <center> So Think of any name in your mind</center>
-  <center>
-    <br />
-  <div id='msg'> Is your first letter more than 'N' </div>
-  <input type='button' value = 'yes' onclick = 'right();'/>
-  <input type='button' value = 'no' onclick = 'left();'/>
-  <br />
-  <input type='button' value = 'Yes, N is my letter steps taken 0' id='foundmsg' onclick = 'found()'/>
-  <br />
-  <br />
-  <br />
-  This is based on Binary Search Algorithm More - <a href = 'https://en.wikipedia.org/wiki/Binary_search_algorithm'> What is it. Click Here </a>
-  <br />
-  <input type='button' value = 'That was Easy! Show me a real magic (This is based on mathematics)' id='' onclick = "alert('Wait till site updates.Come back soon.')"/>
-  </center>
 </body>
 
 </html>
